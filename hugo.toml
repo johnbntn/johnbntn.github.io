@@ -1,6 +1,6 @@
 baseURL = 'https://johnbntn.github.io'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'John Benton'
 theme = 'paper'
 
 [caches]
