@@ -1,0 +1,7 @@
+[submodule "themes/kayal"]
+	path = themes/kayal
+	url = https://github.com/mnjm/kayal.git
+	branch = main
+[submodule "themes/paper"]
+	path = themes/paper
+	url = https://github.com/nanxiaobei/hugo-paper
