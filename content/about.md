@@ -1,0 +1,1 @@
+My name is John Benton and I'm a third year computer science student at Penn State University. I like compilers, cryptography, and theoretical computer science. I also write firmware for Nittany Motorsports, Penn State's Formula SAE team.
