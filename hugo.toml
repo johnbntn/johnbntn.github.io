@@ -9,13 +9,14 @@ theme = 'paper'
 
 [params]
   math = true
-  name = 'Recent Posts'
+  name = 'Recent Posts:'
   bio = ' '
   github = 'johnbntn'
+  mainSections = ["main"]
 
 [[menu.main]]
   name = 'Main Content'
-  url = "/"
+  url = "/main"
   weight = 5
 
 [[menu.main]]

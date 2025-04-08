@@ -9,11 +9,11 @@
     <lastBuildDate>Mon, 24 Mar 2025 16:36:09 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/main/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learning Learning With Errors With Errors</title>
+      <title>A Beginners Guide to the Learning With Errors Problem</title>
       <link>http://localhost:1313/main/learning_with_errors/</link>
       <pubDate>Mon, 24 Mar 2025 16:36:09 -0400</pubDate>
       <guid>http://localhost:1313/main/learning_with_errors/</guid>
-      <description>Placeholder for learning with errors post.</description>
+      <description>Learning Learning with Errors with Errors Why am I writing this&#xA;my experience learning was a hodgepodge of blog posts, lecture notes, and research papers, all of which assume varying degrees of previous knowledge. Create a central starting point for someone interested in LWE/crypto with the only assumption being a reasonable intuition about lattices Provide code as well as some short proof ideas Also more resources to go in depth about a topic Why LWE FHE Quantum Resistant Public key generation The Basics key, vector, packed message, noise Go over generation Modulus Switching Key Switching Security Guaranty Variants </description>
     </item>
   </channel>
 </rss>

@@ -13,21 +13,21 @@
       <link>http://localhost:1313/projects/lv_bms/</link>
       <pubDate>Sat, 05 Apr 2025 12:52:32 -0400</pubDate>
       <guid>http://localhost:1313/projects/lv_bms/</guid>
-      <description>Wrote firmware for a low voltage (20V) BMS system for a FSAE vehicle. This was done using an STM32L432KC and a BQ76905 BMS chip. The system communicates over I2C and also sends CAN to the vehicle&amp;rsquo;s bus. There is support for a multitude of protections including over/under voltage, over/under temperature, short circuit in charge/discharge, and more. Unfortunately I cannot share the code as it is in a private repository.</description>
+      <description>Wrote firmware for a low voltage (20V) passive BMS system for a FSAE vehicle. This was done using an STM32L432KC and a BQ76905 BMS chip. The system communicates over I2C and also sends CAN to the vehicle&amp;rsquo;s bus. There is support for a multitude of protections including over/under voltage, over/under temperature, short circuit in charge/discharge, and more. Unfortunately I cannot share the code as it is in a private repository.</description>
     </item>
     <item>
-      <title>Learning Learning With Errors With Errors</title>
+      <title>A Beginners Guide to the Learning With Errors Problem</title>
       <link>http://localhost:1313/main/learning_with_errors/</link>
       <pubDate>Mon, 24 Mar 2025 16:36:09 -0400</pubDate>
       <guid>http://localhost:1313/main/learning_with_errors/</guid>
-      <description>Placeholder for learning with errors post.</description>
+      <description>Learning Learning with Errors with Errors Why am I writing this&#xA;my experience learning was a hodgepodge of blog posts, lecture notes, and research papers, all of which assume varying degrees of previous knowledge. Create a central starting point for someone interested in LWE/crypto with the only assumption being a reasonable intuition about lattices Provide code as well as some short proof ideas Also more resources to go in depth about a topic Why LWE FHE Quantum Resistant Public key generation The Basics key, vector, packed message, noise Go over generation Modulus Switching Key Switching Security Guaranty Variants </description>
     </item>
     <item>
       <title>Datalog Program Analysis</title>
       <link>http://localhost:1313/projects/datalog_program_analysis/</link>
       <pubDate>Wed, 19 Mar 2025 14:18:11 -0400</pubDate>
       <guid>http://localhost:1313/projects/datalog_program_analysis/</guid>
-      <description>Doing Program Analysis in Datalog https://github.com/johnbntn/dat</description>
+      <description>Datalog is a logical programming language that is closely related to Prolog. You can think of it as Prolog that always terminates. Recently, there has been some research regarding Datalog&amp;rsquo;s use in program analysis [1, 2, 3]&#xA;I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. Here is the repository.&#xA;I believe that Datalog analysis will become even more popular as more research is done to make it more expressive and faster.</description>
     </item>
     <item>
       <title></title>
