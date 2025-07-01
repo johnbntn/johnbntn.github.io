@@ -8,5 +8,5 @@ Datalog is a logical programming language that is closely related to Prolog. You
 
 I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. [Here](https://github.com/johnbntn/dat) is the repository.
 
-I believe that Datalog analysis will become even more popular as more research is done to make it more expressive and faster. [[4, ](https://plg.uwaterloo.ca/~olhotak/pubs/pldi16.pdf) [5, ](https://dl.acm.org/doi/10.1145/3689754) [6](https://popl24.sigplan.org/details/POPL-2024-popl-research-papers/88/Flan-An-Expressive-and-Efficient-Datalog-Compiler-for-Program-Analysis)]
+I believe that Datalog analysis will become even more popular as more research is done to make it more expressive and faster. [[4, ](https://plg.uwaterloo.ca/~olhotak/pubs/pldi16.pdf) [5, ](https://dl.acm.org/doi/10.1145/3689754) [6, ](https://popl24.sigplan.org/details/POPL-2024-popl-research-papers/88/Flan-An-Expressive-and-Efficient-Datalog-Compiler-for-Program-Analysis) [7](https://arxiv.org/abs/2304.04332)]
 
