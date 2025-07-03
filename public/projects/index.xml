@@ -18,9 +18,9 @@
     <item>
       <title>Datalog Program Analysis</title>
       <link>http://localhost:1313/projects/datalog_program_analysis/</link>
-      <pubDate>Wed, 19 Mar 2025 14:18:11 -0400</pubDate>
+      <pubDate>Fri, 03 Jan 2025 14:18:11 -0400</pubDate>
       <guid>http://localhost:1313/projects/datalog_program_analysis/</guid>
-      <description>Datalog is a logical programming language that is closely related to Prolog. You can think of it as Prolog that always terminates. Recently, there has been some research regarding Datalog&amp;rsquo;s use in program analysis [1, 2, 3]&#xA;I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. Here is the repository.&#xA;I believe that Datalog analysis will become even more popular as more research is done to make it more expressive and faster.</description>
+      <description>Datalog Program Analysis Datalog is a logical programming language that is closely related to Prolog. You can think of it as Prolog that always terminates. Recently, there has been some research regarding Datalog&amp;rsquo;s use in program analysis [1, 2, 3]&#xA;I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. Here is the repository.</description>
     </item>
   </channel>
 </rss>

@@ -192,8 +192,24 @@
   }
 
 </style>
-
-</head>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [
+                ['$', '$'],
+                ['\\(', '\\)'],
+            ],
+        },
+        svg: {
+            fontCache: 'global',
+        },
+    };
+</script>
+<script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+></script></head>
 
 <body>
   <header><a href="/" class="title">
@@ -202,15 +218,16 @@
 <nav>
 <a href="/">Home</a>
 
-<a href="/main/">Blog</a>
+<a href="/blog/">Blog</a>
 
 <a href="/projects/">Projects</a>
-
-<a href="/about/">About</a>
 
 </nav>
 </header>
   <main>
+<h2 id="my-name-is-john-benton">My name is John Benton,</h2>
+<p>I&rsquo;m a fourth year computer science student at Penn State University. I like compilers and theoretical computer science, sometimes I get to work on projects that involve both. I also write firmware for Nittany Motorsports, Penn State&rsquo;s Formula SAE team.</p>
+<p>This blog is a collection of cool aspects of computer science that I don&rsquo;t think get talked about enough. Hopefully you find some of them interesting.</p>
 
 
   </main>

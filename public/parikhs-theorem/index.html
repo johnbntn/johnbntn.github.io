@@ -5,30 +5,34 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects | Some Interesting Things</title>
-<meta name="title" content="Projects" />
-<meta name="description" content="Some Interesting Things" />
+<title>Parikhs Theorem | Some Interesting Things</title>
+<meta name="title" content="Parikhs Theorem" />
+<meta name="description" content="Proving a language context free" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Projects" />
-<meta property="og:description" content="Some Interesting Things" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/projects/" /><meta property="og:site_name" content="Some Interesting Things" />
+<meta property="og:title" content="Parikhs Theorem" />
+<meta property="og:description" content="Proving a language context free" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/parikhs-theorem/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-05-25T20:23:31-04:00" />
+<meta property="article:modified_time" content="2025-05-25T20:23:31-04:00" /><meta property="og:site_name" content="Some Interesting Things" />
 
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Projects"/>
-<meta name="twitter:description" content="Some Interesting Things"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Parikhs Theorem"/>
+<meta name="twitter:description" content="Proving a language context free"/>
 
 
 
-<meta itemprop="name" content="Projects">
-<meta itemprop="description" content="Some Interesting Things">
+<meta itemprop="name" content="Parikhs Theorem">
+<meta itemprop="description" content="Proving a language context free"><meta itemprop="datePublished" content="2025-05-25T20:23:31-04:00" />
+<meta itemprop="dateModified" content="2025-05-25T20:23:31-04:00" />
+<meta itemprop="wordCount" content="293">
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/projects/index.xml" title="Some Interesting Things" />
   <style>
   :root {
     --width: 720px;
@@ -224,41 +228,33 @@
 </nav>
 </header>
   <main>
+
+<h1>Parikhs Theorem</h1>
+<p>
+  <i>
+    <time datetime='2025-05-25'>
+      25 May, 2025
+    </time>
+  </i>
+</p>
+
 <content>
-  
-  <ul class="blog-posts">
-    
-    <li>
-      <span>
-        <i>
-          <time datetime='2025-04-05'>
-            05 Apr, 2025
-          </time>
-        </i>
-      </span>
-      <a href="http://localhost:1313/projects/fsae/">Nittany Motorsports</a>
-    </li>
-    
-    <li>
-      <span>
-        <i>
-          <time datetime='2025-01-03'>
-            03 Jan, 2025
-          </time>
-        </i>
-      </span>
-      <a href="http://localhost:1313/projects/datalog_program_analysis/">Datalog Program Analysis</a>
-    </li>
-    
-  </ul>
-  
-  <small>
-    <div>
-      
-    </div>
-  </small>
-  
+  <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, its proof, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
+<h3 id="background">Background</h3>
+<p>Like any good TCS concept, Parikh&rsquo;s Theorem starts with a slightly intimidating amount of definitions. They are as follows:</p>
+<p>Let $ \Sigma = ${$ a_1, a_2, \dots, a_k $}$ $ be a language. Then the $Parikh$ $vector$ of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
+<p>Seems a bit messy but all we&rsquo;re really saying is that, given some valid word, we can count the occurences of every symbol in that word.</p>
+<p>Now a subset of $\mathbb{N}^k$ is $linear$ if you can represent it as</p>
+<p>$$ { \mu_0 + t_1\mu_1 + \dots + t_m\mu_m : | :t_1 \dots t_m \in \mathbb{N} } $$</p>
+<p>where $\mu_1 &hellip; \mu_m $ are vectors. And a set is called $semi ; linear$ if it is made up of finitely many linear subsets.</p>
+<p>The phrasing semi linear initially threw me off. A semi linear set is not somehow &ldquo;partially linear&rdquo;, it is just a collection of linear subsets. In fact, just one linear subset is considered to be semi linear. Just another victim of the horrid naming choices made by computer scientists.</p>
+<h3 id="the-theorem">The Theorem</h3>
+<p>Parikh&rsquo;s Theorem states that for any context free language $L$, let $P(L)$ be the set of it&rsquo;s Parikh vectors. Then $P(L)$ is semi linear. Also, if $S$ is a semi linear set, then there is a regular lanuage that has Parikh vectors $S$.</p>
+
 </content>
+<p>
+  
+</p>
 
   </main>
   <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
