@@ -30,7 +30,7 @@
 <meta itemprop="name" content="Parikhs Theorem">
 <meta itemprop="description" content="Proving a language context free"><meta itemprop="datePublished" content="2025-05-25T20:23:31-04:00" />
 <meta itemprop="dateModified" content="2025-05-25T20:23:31-04:00" />
-<meta itemprop="wordCount" content="293">
+<meta itemprop="wordCount" content="290">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -196,24 +196,21 @@
   }
 
 </style>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
 <script>
-    MathJax = {
-        tex: {
-            inlineMath: [
-                ['$', '$'],
-                ['\\(', '\\)'],
-            ],
-        },
-        svg: {
-            fontCache: 'global',
-        },
-    };
+  
+  window.myDelimiters = [
+  {left: "$$", right: "$$", display: true},
+  {left: "$", right: "$", display: false},
+  {left: "\\(", right: "\\)", display: false},
+  {left: "\\[", right: "\\]", display: true}
+];
 </script>
-<script
-    id="MathJax-script"
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-></script></head>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {delimiters: window.myDelimiters});"></script></head>
 
 <body>
   <header><a href="/" class="title">
@@ -243,11 +240,11 @@
   <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, its proof, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
 <h3 id="background">Background</h3>
 <p>Like any good TCS concept, Parikh&rsquo;s Theorem starts with a slightly intimidating amount of definitions. They are as follows:</p>
-<p>Let $ \Sigma = ${$ a_1, a_2, \dots, a_k $}$ $ be a language. Then the $Parikh$ $vector$ of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
+<p>Let $ \Sigma = \lbrace a_1, a_2, \dots, a_k\rbrace$  be a language. Then the <em>parikh vector</em> of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
 <p>Seems a bit messy but all we&rsquo;re really saying is that, given some valid word, we can count the occurences of every symbol in that word.</p>
-<p>Now a subset of $\mathbb{N}^k$ is $linear$ if you can represent it as</p>
-<p>$$ { \mu_0 + t_1\mu_1 + \dots + t_m\mu_m : | :t_1 \dots t_m \in \mathbb{N} } $$</p>
-<p>where $\mu_1 &hellip; \mu_m $ are vectors. And a set is called $semi ; linear$ if it is made up of finitely many linear subsets.</p>
+<p>Now a subset of $\mathbb{N}^k$ is <em>linear</em> if you can represent it as</p>
+<p>$$ \lbrace \mu_0 + t_1\mu_1 + \dots + t_m\mu_m : | :t_1 \dots t_m \in \mathbb{N} \rbrace $$</p>
+<p>where $\mu_1 &hellip; \mu_m $ are vectors. And a set is called <em>semi linear</em> if it is made up of finitely many linear subsets.</p>
 <p>The phrasing semi linear initially threw me off. A semi linear set is not somehow &ldquo;partially linear&rdquo;, it is just a collection of linear subsets. In fact, just one linear subset is considered to be semi linear. Just another victim of the horrid naming choices made by computer scientists.</p>
 <h3 id="the-theorem">The Theorem</h3>
 <p>Parikh&rsquo;s Theorem states that for any context free language $L$, let $P(L)$ be the set of it&rsquo;s Parikh vectors. Then $P(L)$ is semi linear. Also, if $S$ is a semi linear set, then there is a regular lanuage that has Parikh vectors $S$.</p>

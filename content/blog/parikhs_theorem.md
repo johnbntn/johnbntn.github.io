@@ -10,15 +10,15 @@ Don't let the lobbyists at big PDA have you thinking there's only one way to pro
 ### Background 
 Like any good TCS concept, Parikh's Theorem starts with a slightly intimidating amount of definitions. They are as follows:
 
-Let $ \Sigma = $\{$ a_1, a_2, \dots, a_k $\}$ $ be a language. Then the $Parikh$ $vector$ of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $
+Let $ \Sigma = \lbrace a_1, a_2, \dots, a_k\rbrace$  be a language. Then the *parikh vector* of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $
 
 Seems a bit messy but all we're really saying is that, given some valid word, we can count the occurences of every symbol in that word. 
 
-Now a subset of $\mathbb{N}^k$ is $linear$ if you can represent it as
+Now a subset of $\mathbb{N}^k$ is *linear* if you can represent it as
 
- $$ \{ \mu_0 + t_1\mu_1 + \dots + t_m\mu_m \: | \:t_1 \dots t_m \in \mathbb{N} \} $$ 
+ $$ \lbrace \mu_0 + t_1\mu_1 + \dots + t_m\mu_m \: | \:t_1 \dots t_m \in \mathbb{N} \rbrace $$ 
  
- where $\mu_1 ... \mu_m $ are vectors. And a set is called $semi \; linear$ if it is made up of finitely many linear subsets. 
+ where $\mu_1 ... \mu_m $ are vectors. And a set is called *semi linear* if it is made up of finitely many linear subsets. 
 
 The phrasing semi linear initially threw me off. A semi linear set is not somehow "partially linear", it is just a collection of linear subsets. In fact, just one linear subset is considered to be semi linear. Just another victim of the horrid naming choices made by computer scientists.
 

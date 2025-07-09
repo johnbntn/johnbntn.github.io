@@ -6,35 +6,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon/favicon.png" />
-<title>Ogdens_theorem | Some Interesting Things</title>
-<meta name="title" content="Ogdens_theorem" />
+<title>Ogdens Theorem and Inherent Ambiguity in CFLs | Some Interesting Things</title>
+<meta name="title" content="Ogdens Theorem and Inherent Ambiguity in CFLs" />
 <meta name="description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Ogdens_theorem" />
+<meta property="og:title" content="Ogdens Theorem and Inherent Ambiguity in CFLs" />
 <meta property="og:description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/ogdens_theorem/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="http://localhost:1313/ogdens-theorem-and-inherent-ambiguity-in-cfls/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2025-05-25T20:23:22-04:00" />
 <meta property="article:modified_time" content="2025-05-25T20:23:22-04:00" /><meta property="og:site_name" content="Some Interesting Things" />
 
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ogdens_theorem"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ogdens Theorem and Inherent Ambiguity in CFLs"/>
 <meta name="twitter:description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool."/>
 
 
 
-<meta itemprop="name" content="Ogdens_theorem">
+<meta itemprop="name" content="Ogdens Theorem and Inherent Ambiguity in CFLs">
 <meta itemprop="description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool."><meta itemprop="datePublished" content="2025-05-25T20:23:22-04:00" />
 <meta itemprop="dateModified" content="2025-05-25T20:23:22-04:00" />
-<meta itemprop="wordCount" content="164">
+<meta itemprop="wordCount" content="750">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -200,24 +200,21 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
   }
 
 </style>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
 <script>
-    MathJax = {
-        tex: {
-            inlineMath: [
-                ['$', '$'],
-                ['\\(', '\\)'],
-            ],
-        },
-        svg: {
-            fontCache: 'global',
-        },
-    };
+  
+  window.myDelimiters = [
+  {left: "$$", right: "$$", display: true},
+  {left: "$", right: "$", display: false},
+  {left: "\\(", right: "\\)", display: false},
+  {left: "\\[", right: "\\]", display: true}
+];
 </script>
-<script
-    id="MathJax-script"
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-></script></head>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {delimiters: window.myDelimiters});"></script></head>
 
 <body>
   <header><a href="/" class="title">
@@ -234,7 +231,7 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 </header>
   <main>
 
-<h1>Ogdens_theorem</h1>
+<h1>Ogdens Theorem and Inherent Ambiguity in CFLs</h1>
 <p>
   <i>
     <time datetime='2025-05-25'>
@@ -246,7 +243,8 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <content>
   <p>The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.</p>
 <p>But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool.</p>
-<p><em>This post requires some background on context free languages, specifically the pumping lemma.</em></p>
+<p><em>This post requires some background on context free languages, specifically the pumping lemma and the CNF of a context free language.</em></p>
+<h2 id="ogdens-theorem">Ogden&rsquo;s Theorem</h2>
 <p>The theorem is as follows:</p>
 <p>Let $L$ be an arbitrary CFL. There is some number $p$ such that for any word $w \in L$ where $w$ has at least $p$ <em>marked symbols</em>, $w$ can be split into five parts $uvxyz$ with the properties</p>
 <ol>
@@ -254,6 +252,29 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <li>$vy \geq 1$ marked symbol</li>
 <li>You can &ldquo;pump&rdquo; i.e. $uv^ixy^iz \in L, ; \forall i \in \mathbb{N}$</li>
 </ol>
+<p>You&rsquo;ll notice the theorem does not place any restrictions on choosing the number of marked symbols; similar to the proof of the original pumping lemma, we need to choose a number where we can guarantee a variable will be seen more than once in a words derivation tree. If a variable shows up more than once, we know we have reached a cycle and can pump.</p>
+<p>Without loss of generality, assume we are dealing with a CFL in Chomsky Normal Form. Any CFL can be converted to CNF, so this is fine. We&rsquo;re going to choose the magical number $p = 2^{k+1}$ where $k$ is the number of non-terminals (or variables) in our language.</p>
+<p>To prove that this amount of non-terminals will always result in a loop, consider the derivation tree of a word $w \in L$ with $2^{k+1}$ marked symbols.</p>
+<p>Because of CNF, at every node, we&rsquo;re given the choice between two paths, each with a number of marked symbols. If we always pick the child node with the larger number of marked symbols, we&rsquo;ll never lose out on more than half of the current available marked symbols.</p>
+<p>More formally, if parent node $n$ has $x$ marked symbols under it and we choose child node $m$, $m$ has no less than $x/2$ marked symbols under it because we chose the node with the larger amount of marked symbols.</p>
+<p>Thus, the number of nodes we visit will be no less than $log_2 2^{k+1} = k+1$, ensuring we visit at least one variable twice.</p>
+<p>From here, the proof almost completely models the proof from the original pumping lemma:</p>
+<ol>
+<li>$uxy$ has at most $p$ marked symbols</li>
+<li>Say that variable $A$ is repeated. $A$ has rule $A \rightarrow BC$. Because $A$ is a node on our derivation tree, both $B$ and $C$ also have marked symbols. Thus, $vy$ has at least 1 marked symbol</li>
+<li>Finally, since $A \Rightarrow^* vAy$ and $A \Rightarrow^* x$, $A \Rightarrow^* v^ixy^i$ so we can do $uv^ixy^iz$ $\forall i \in \mathbb{N}$</li>
+</ol>
+<p>If this explanation only made you more confused, do not be alarmed; panic is a common reaction to seeing proofs about CFLs. I find that drawing a picture of the parse tree for a random grammar is a good way to mitigate confusion.</p>
+<h2 id="inherent-ambiguity">Inherent Ambiguity</h2>
+<p>Now that we&rsquo;re all Ogden&rsquo;s Theorem experts, we can talk about inherent ambiguity. If you&rsquo;ve ever taken an intro to TOC or maybe even a programming languages class, you&rsquo;ve likely been asked an exam question about turning an ambiguous grammar (one that has multiple derivation trees for the same word), into a non ambiguous one. For example, the grammar
+$$
+S \rightarrow A \medspace | \medspace B \newline
+A \rightarrow a \newline
+B \rightarrow a
+$$
+is ambigous because the word $a$ can be made 2 different ways. In this extremely contrived example it&rsquo;s easy to see that removing the ambiguity is as simple as removing variable $A$ or $B$.</p>
+<p>But computer scientists have been able to prove that some languages can never be turned unambiguous. So if you&rsquo;re ever stuck on an ambiguouty problem on an exam, just say it&rsquo;s not possible and there will be a non-zero chance you&rsquo;re right.</p>
+<p>To prove this, we&rsquo;ll take a look at the language $L = \lbrace 0^n1^n2^m \rbrace \cup \lbrace 0^m1^n2^n \rbrace $ and use Ogden&rsquo;s Lemma to show that a string belonging to the language can always be derived in more than 1 way, no matter the grammar rules.</p>
 
 </content>
 <p>
