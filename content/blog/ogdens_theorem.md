@@ -52,3 +52,29 @@ is ambigous because the word $a$ can be made 2 different ways. In this extremely
 But computer scientists have been able to prove that some languages can never be turned unambiguous. So if you're ever stuck on an ambiguouty problem on an exam, just say it's not possible and there will be a non-zero chance you're right.
 
 To prove this, we'll take a look at the language $L = \lbrace 0^n1^n2^m \rbrace \cup \lbrace 0^m1^n2^n \rbrace $ and use Ogden's Lemma to show that a string belonging to the language can always be derived in more than 1 way, no matter the grammar rules.
+
+The trick here is that a language $L = L_1 \cup L_2$ has to include all words $w \in L_1$ and $m \in L_2$. So you can find a word $w_1 \in L_1$ that pumps to some $z \in L$ and a word $m_1 \in L_2$ that pumps to the same $z \in L$, you'll have proved its inherent ambiguity. Ogden's Theorem comes in really helpful in this situation because it gives us the power to essentially "choose where to pump" and create that $z \in L$ two different ways.
+
+### Proof
+
+Let $p$ be our pumping length and let $w_1 = 0^p1^p2^{p! + p}$ Clearly, $w_1$ is in $L$. Mark all $0^p1^p$. We can find some $uvxyz$ satisfying Ogden's Theorem.
+
+1) $uv^ixy^iz \in L$:
+
+When you stipulate that $v$ and $y$ contain the same amount of only 0s and 1s respectively, this is satisfied.
+
+2) $vy$ contains at least 1 marked symbol:
+
+We previously stated that we're marking all 0s and 1s and while satisfying property $1$, we made $v$ and $y$ exclusively 0s and 1s, respectively, so this is again satisfied.
+
+3) $vy$ have less than $p$ marked symbols:
+
+We can claim that both $v$ and $y$ have $k$ symbols (to maintain property $1$) and that $k \lt p$.
+
+Pumping the string $0^p1^p2^{p!+1} with respect to our just stated layout $k/p!$ times gets you the string $0^{p!+1}1^{p!+1}2^{p!+1} \in L$.
+
+For part two of the proof consider the string $w_2 0^{p!+1}1^p2^p \in L$. Proving that this string also has a satisfying assignment $uvxyz$ is almost identical to the proof in part 1 and is left as an exercise. Similarly, proving that you can pump up to $0^{p!+1}1^{p!+1}2^{p!+1} \in L$ also follows the same exact logic.
+
+We've just demonstrated that the string $0^{p!+1}1^{p!+1}2^{p!+1} \in L$ has at least two different parse trees. Thus, $L$ is inherently ambiguous.
+
+And that's it! Hope you've enjoyed this small journey through CFLs. If you interested in some more reading, check out [Ogden's original paper](https://link.springer.com/article/10.1007/BF01694004) where he goes on to discuss some more advanced problems related to inherent ambiguity.
