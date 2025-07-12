@@ -8,19 +8,19 @@
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-05-25T20:24:03-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-04-05T12:52:32-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/baladys_anomaly/</loc>
     <lastmod>2025-05-25T20:24:03-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/parikhs-theorem/</loc>
     <lastmod>2025-05-25T20:23:31-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity-in-cfls/</loc>
-    <lastmod>2025-05-25T20:23:22-04:00</lastmod>
+    <loc>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity/</loc>
+    <lastmod>2025-04-25T20:23:22-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/fsae/</loc>
+    <lastmod>2025-04-05T12:52:32-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-04-05T12:52:32-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/a-beginners-guide-to-the-learning-with-errors-problem/</loc>

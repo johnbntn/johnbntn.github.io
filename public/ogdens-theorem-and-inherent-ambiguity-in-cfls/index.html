@@ -34,7 +34,7 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <meta itemprop="description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool."><meta itemprop="datePublished" content="2025-05-25T20:23:22-04:00" />
 <meta itemprop="dateModified" content="2025-05-25T20:23:22-04:00" />
-<meta itemprop="wordCount" content="750">
+<meta itemprop="wordCount" content="1122">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -252,7 +252,7 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <li>$vy \geq 1$ marked symbol</li>
 <li>You can &ldquo;pump&rdquo; i.e. $uv^ixy^iz \in L, ; \forall i \in \mathbb{N}$</li>
 </ol>
-<p>You&rsquo;ll notice the theorem does not place any restrictions on choosing the number of marked symbols; similar to the proof of the original pumping lemma, we need to choose a number where we can guarantee a variable will be seen more than once in a words derivation tree. If a variable shows up more than once, we know we have reached a cycle and can pump.</p>
+<p>You&rsquo;ll notice the theorem does not place any restrictions on choosing the number of marked symbols; similar to the proof of the original pumping lemma, we need to choose a number where we can guarantee a variable will be seen more than once in a word&rsquo;s derivation tree. If a variable shows up more than once, we know we have reached a cycle and can pump.</p>
 <p>Without loss of generality, assume we are dealing with a CFL in Chomsky Normal Form. Any CFL can be converted to CNF, so this is fine. We&rsquo;re going to choose the magical number $p = 2^{k+1}$ where $k$ is the number of non-terminals (or variables) in our language.</p>
 <p>To prove that this amount of non-terminals will always result in a loop, consider the derivation tree of a word $w \in L$ with $2^{k+1}$ marked symbols.</p>
 <p>Because of CNF, at every node, we&rsquo;re given the choice between two paths, each with a number of marked symbols. If we always pick the child node with the larger number of marked symbols, we&rsquo;ll never lose out on more than half of the current available marked symbols.</p>
@@ -260,8 +260,8 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <p>Thus, the number of nodes we visit will be no less than $log_2 2^{k+1} = k+1$, ensuring we visit at least one variable twice.</p>
 <p>From here, the proof almost completely models the proof from the original pumping lemma:</p>
 <ol>
-<li>$uxy$ has at most $p$ marked symbols</li>
-<li>Say that variable $A$ is repeated. $A$ has rule $A \rightarrow BC$. Because $A$ is a node on our derivation tree, both $B$ and $C$ also have marked symbols. Thus, $vy$ has at least 1 marked symbol</li>
+<li>To prove that $uxy$ has at most $p$ symbols, we stipulate that $uxy$ is derived from the bottom $k+1$ variables on the path. Any string derived from $k+1$ variables can have at most $2^{k+1} = p$ marked symbols.</li>
+<li>Say that variable $A$ is repeated. $A$ has rule $A \rightarrow BC$. Because $A$ is a node on our derivation tree, both $BC$ has at least 1 marked symbol. Thus, $vy$ has at least 1 marked symbol</li>
 <li>Finally, since $A \Rightarrow^* vAy$ and $A \Rightarrow^* x$, $A \Rightarrow^* v^ixy^i$ so we can do $uv^ixy^iz$ $\forall i \in \mathbb{N}$</li>
 </ol>
 <p>If this explanation only made you more confused, do not be alarmed; panic is a common reaction to seeing proofs about CFLs. I find that drawing a picture of the parse tree for a random grammar is a good way to mitigate confusion.</p>
@@ -275,6 +275,25 @@ $$
 is ambigous because the word $a$ can be made 2 different ways. In this extremely contrived example it&rsquo;s easy to see that removing the ambiguity is as simple as removing variable $A$ or $B$.</p>
 <p>But computer scientists have been able to prove that some languages can never be turned unambiguous. So if you&rsquo;re ever stuck on an ambiguouty problem on an exam, just say it&rsquo;s not possible and there will be a non-zero chance you&rsquo;re right.</p>
 <p>To prove this, we&rsquo;ll take a look at the language $L = \lbrace 0^n1^n2^m \rbrace \cup \lbrace 0^m1^n2^n \rbrace $ and use Ogden&rsquo;s Lemma to show that a string belonging to the language can always be derived in more than 1 way, no matter the grammar rules.</p>
+<p>The trick here is that a language $L = L_1 \cup L_2$ has to include all words $w \in L_1$ and $m \in L_2$. So you can find a word $w_1 \in L_1$ that pumps to some $z \in L$ and a word $m_1 \in L_2$ that pumps to the same $z \in L$, you&rsquo;ll have proved its inherent ambiguity. Ogden&rsquo;s Theorem comes in really helpful in this situation because it gives us the power to essentially &ldquo;choose where to pump&rdquo; and create that $z \in L$ two different ways.</p>
+<h3 id="proof">Proof</h3>
+<p>Let $p$ be our pumping length and let $w_1 = 0^p1^p2^{p! + p}$ Clearly, $w_1$ is in $L$. Mark all $0^p1^p$. We can find some $uvxyz$ satisfying Ogden&rsquo;s Theorem.</p>
+<ol>
+<li>$uv^ixy^iz \in L$:</li>
+</ol>
+<p>When you stipulate that $v$ and $y$ contain the same amount of only 0s and 1s respectively, this is satisfied.</p>
+<ol start="2">
+<li>$vy$ contains at least 1 marked symbol:</li>
+</ol>
+<p>We previously stated that we&rsquo;re marking all 0s and 1s and while satisfying property $1$, we made $v$ and $y$ exclusively 0s and 1s, respectively, so this is again satisfied.</p>
+<ol start="3">
+<li>$vy$ have less than $p$ marked symbols:</li>
+</ol>
+<p>We can claim that both $v$ and $y$ have $k$ symbols (to maintain property $1$) and that $k \lt p$.</p>
+<p>Pumping the string $0^p1^p2^{p!+1}$ with respect to our just stated layout $k/p!$ times gets you the string $0^{p!+1}1^{p!+1}2^{p!+1} \in L$.</p>
+<p>For part two of the proof consider the string $w_2 = 0^{p!+1}1^p2^p \in L$. Proving that this string also has a satisfying assignment $uvxyz$ is almost identical to the proof in part 1 and is left as an exercise. Similarly, proving that you can pump up to $0^{p!+1}1^{p!+1}2^{p!+1} \in L$ also follows the same exact logic.</p>
+<p>We&rsquo;ve just demonstrated that the string $0^{p!+1}1^{p!+1}2^{p!+1} \in L$ has at least two different parse trees. Thus, $L$ is inherently ambiguous.</p>
+<p>And that&rsquo;s it! Hope you&rsquo;ve enjoyed this small journey through CFLs. If you interested in some more reading, check out <a href="https://link.springer.com/article/10.1007/BF01694004">Ogden&rsquo;s original paper</a> where he goes on to discuss some more advanced problems related to inherent ambiguity.</p>
 
 </content>
 <p>

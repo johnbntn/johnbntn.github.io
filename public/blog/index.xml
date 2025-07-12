@@ -23,10 +23,10 @@
       <description>Don&amp;rsquo;t let the lobbyists at big PDA have you thinking there&amp;rsquo;s only one way to prove a language is context free. Parikh&amp;rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&amp;rsquo;ll go over Parikh&amp;rsquo;s Theorem, its proof, and how to use it. Strap in because it&amp;rsquo;s gonna be a wild ride.&#xA;Background Like any good TCS concept, Parikh&amp;rsquo;s Theorem starts with a slightly intimidating amount of definitions.</description>
     </item>
     <item>
-      <title>Ogdens Theorem and Inherent Ambiguity in CFLs</title>
-      <link>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity-in-cfls/</link>
-      <pubDate>Sun, 25 May 2025 20:23:22 -0400</pubDate>
-      <guid>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity-in-cfls/</guid>
+      <title>Ogdens Theorem and Inherent Ambiguity</title>
+      <link>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity/</link>
+      <pubDate>Fri, 25 Apr 2025 20:23:22 -0400</pubDate>
+      <guid>http://localhost:1313/ogdens-theorem-and-inherent-ambiguity/</guid>
       <description>The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &amp;ldquo;choose where to pump&amp;rdquo;.&#xA;But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&amp;rsquo;s cool.</description>
     </item>
     <item>
