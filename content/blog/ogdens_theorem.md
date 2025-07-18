@@ -25,7 +25,7 @@ Without loss of generality, assume we are dealing with a CFL in Chomsky Normal F
 
 To prove that this amount of non-terminals will always result in a loop, consider the derivation tree of a word $w \in L$ with $2^{k+1}$ marked symbols. 
 
-Because of CNF, at every node, we're given the choice between two paths, each with a number of marked symbols. If we always pick the child node with the larger number of marked symbols, we'll never lose out on more than half of the current available marked symbols.
+Because of CNF, at every node, we're given the choice between two paths, each with a number of marked symbols on it. If we always pick the child node with the larger number of marked symbols on its path, we'll never lose out on more than half of the current available marked symbols.
 
 More formally, if parent node $n$ has $x$ marked symbols under it and we choose child node $m$, $m$ has no less than $x/2$ marked symbols under it because we chose the node with the larger amount of marked symbols.
 

@@ -30,7 +30,7 @@
 <meta itemprop="name" content="Parikhs Theorem">
 <meta itemprop="description" content="Proving a language context free"><meta itemprop="datePublished" content="2025-05-25T20:23:31-04:00" />
 <meta itemprop="dateModified" content="2025-05-25T20:23:31-04:00" />
-<meta itemprop="wordCount" content="290">
+<meta itemprop="wordCount" content="308">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -235,7 +235,7 @@
 </p>
 
 <content>
-  <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, its proof, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
+  <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, two (!) proofs, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
 <h3 id="background">Background</h3>
 <p>Like any good TCS concept, Parikh&rsquo;s Theorem starts with a slightly intimidating amount of definitions. They are as follows:</p>
 <p>Let $ \Sigma = \lbrace a_1, a_2, \dots, a_k\rbrace$  be a language. Then the <em>parikh vector</em> of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
@@ -246,6 +246,7 @@
 <p>The phrasing semi linear initially threw me off. A semi linear set is not somehow &ldquo;partially linear&rdquo;, it is just a collection of linear subsets. In fact, just one linear subset is considered to be semi linear. Just another victim of the horrid naming choices made by computer scientists.</p>
 <h3 id="the-theorem">The Theorem</h3>
 <p>Parikh&rsquo;s Theorem states that for any context free language $L$, let $P(L)$ be the set of it&rsquo;s Parikh vectors. Then $P(L)$ is semi linear. Also, if $S$ is a semi linear set, then there is a regular lanuage that has Parikh vectors $S$.</p>
+<p>To prove it, we&rsquo;ll first need to strengthen the <a href="https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages">pumping lemma for CFLs</a>, similar to <a href="/ogdens-theorem-and-inherent-ambiguity">Ogden&rsquo;s Theorem</a>.</p>
 
 </content>
 <p>

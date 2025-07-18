@@ -5,7 +5,7 @@ date = 2025-05-25T20:23:31-04:00
 draft = true
 +++
 
-Don't let the lobbyists at big PDA have you thinking there's only one way to prove a language is context free. Parikh's theorem is a helpful alternative when a pda seems too complex to draw. In this post we'll go over Parikh's Theorem, its proof, and how to use it. Strap in because it's gonna be a wild ride.
+Don't let the lobbyists at big PDA have you thinking there's only one way to prove a language is context free. Parikh's theorem is a helpful alternative when a pda seems too complex to draw. In this post we'll go over Parikh's Theorem, two (!) proofs, and how to use it. Strap in because it's gonna be a wild ride.
 
 ### Background 
 Like any good TCS concept, Parikh's Theorem starts with a slightly intimidating amount of definitions. They are as follows:
@@ -25,3 +25,5 @@ The phrasing semi linear initially threw me off. A semi linear set is not someho
 ### The Theorem
 
 Parikh's Theorem states that for any context free language $L$, let $P(L)$ be the set of it's Parikh vectors. Then $P(L)$ is semi linear. Also, if $S$ is a semi linear set, then there is a regular lanuage that has Parikh vectors $S$.
+
+To prove it, we'll first need to strengthen the [pumping lemma for CFLs](https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages), similar to [Ogden's Theorem](/ogdens-theorem-and-inherent-ambiguity).
