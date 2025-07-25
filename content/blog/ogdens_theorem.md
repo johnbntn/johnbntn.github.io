@@ -1,5 +1,5 @@
 +++
-title = 'Ogdens Theorem and Inherent Ambiguity'
+title = "Ogden's Theorem and Inherent Ambiguity"
 date = 2025-04-25T20:23:22-04:00
 draft = false
 +++
@@ -42,7 +42,7 @@ If this explanation only made you more confused, do not be alarmed; panic is a c
 
 Now that we're all Ogden's Theorem experts, we can talk about inherent ambiguity. If you've ever taken an intro to TOC or maybe even a programming languages class, you've likely been asked an exam question about turning an ambiguous grammar (one that has multiple derivation trees for the same word), into a non ambiguous one. For example, the grammar
 $$ 
-S \rightarrow A \medspace | \medspace B \newline
+S \rightarrow A \: | \: B \newline
 A \rightarrow a \newline
 B \rightarrow a 
 $$

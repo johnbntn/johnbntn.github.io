@@ -6,14 +6,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon/favicon.png" />
-<title>Ogdens Theorem and Inherent Ambiguity | Some Interesting Things</title>
-<meta name="title" content="Ogdens Theorem and Inherent Ambiguity" />
+<title>Ogden&#39;s Theorem and Inherent Ambiguity | Some Interesting Things</title>
+<meta name="title" content="Ogden&#39;s Theorem and Inherent Ambiguity" />
 <meta name="description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Ogdens Theorem and Inherent Ambiguity" />
+<meta property="og:title" content="Ogden&#39;s Theorem and Inherent Ambiguity" />
 <meta property="og:description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool." />
 <meta property="og:type" content="article" />
@@ -24,13 +24,13 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ogdens Theorem and Inherent Ambiguity"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ogden&#39;s Theorem and Inherent Ambiguity"/>
 <meta name="twitter:description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool."/>
 
 
 
-<meta itemprop="name" content="Ogdens Theorem and Inherent Ambiguity">
+<meta itemprop="name" content="Ogden&#39;s Theorem and Inherent Ambiguity">
 <meta itemprop="description" content="The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, &ldquo;choose where to pump&rdquo;.
 But why study it? Well, most notably, the theorem lends itself well to a proof about the inherent ambiguity of CFLs; less notably, I think it&rsquo;s cool."><meta itemprop="datePublished" content="2025-04-25T20:23:22-04:00" />
 <meta itemprop="dateModified" content="2025-04-25T20:23:22-04:00" />
@@ -41,9 +41,9 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
   <style>
   :root {
     --width: 720px;
-    --font-main: Verdana, sans-serif;
-    --font-secondary: Verdana, sans-serif;
-    --font-scale: 1em;
+    --font-main: 'Merriweather', 'serif';
+    --font-secondary: 'Merriweather', 'serif';
+    --font-scale: 1.1em;
     --background-color: #fff;
     --heading-color: #222;
     --text-color: #444;
@@ -200,21 +200,23 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
   }
 
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
 <script>
-  
-  window.myDelimiters = [
-  {left: "$$", right: "$$", display: true},
-  {left: "$", right: "$", display: false},
-  {left: "\\(", right: "\\)", display: false},
-  {left: "\\[", right: "\\]", display: true}
-];
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
-    onload="renderMathInElement(document.body, {delimiters: window.myDelimiters});"></script></head>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script></head>
 
 <body>
   <header><a href="/" class="title">
@@ -229,7 +231,7 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 </header>
   <main>
 
-<h1>Ogdens Theorem and Inherent Ambiguity</h1>
+<h1>Ogden&#39;s Theorem and Inherent Ambiguity</h1>
 <p>
   <i>
     <time datetime='2025-04-25'>
@@ -266,7 +268,7 @@ But why study it? Well, most notably, the theorem lends itself well to a proof a
 <h2 id="inherent-ambiguity">Inherent Ambiguity</h2>
 <p>Now that we&rsquo;re all Ogden&rsquo;s Theorem experts, we can talk about inherent ambiguity. If you&rsquo;ve ever taken an intro to TOC or maybe even a programming languages class, you&rsquo;ve likely been asked an exam question about turning an ambiguous grammar (one that has multiple derivation trees for the same word), into a non ambiguous one. For example, the grammar
 $$
-S \rightarrow A \medspace | \medspace B \newline
+S \rightarrow A : | : B \newline
 A \rightarrow a \newline
 B \rightarrow a
 $$

@@ -6,13 +6,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon/favicon.png" />
-<title>Parikhs Theorem | Some Interesting Things</title>
-<meta name="title" content="Parikhs Theorem" />
+<title>Parikh&#39;s Theorem | Some Interesting Things</title>
+<meta name="title" content="Parikh&#39;s Theorem" />
 <meta name="description" content="Proving a language context free" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Parikhs Theorem" />
+<meta property="og:title" content="Parikh&#39;s Theorem" />
 <meta property="og:description" content="Proving a language context free" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/parikhs-theorem/" /><meta property="article:section" content="blog" />
@@ -22,24 +22,24 @@
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Parikhs Theorem"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Parikh&#39;s Theorem"/>
 <meta name="twitter:description" content="Proving a language context free"/>
 
 
 
-<meta itemprop="name" content="Parikhs Theorem">
+<meta itemprop="name" content="Parikh&#39;s Theorem">
 <meta itemprop="description" content="Proving a language context free"><meta itemprop="datePublished" content="2025-05-25T20:23:31-04:00" />
 <meta itemprop="dateModified" content="2025-05-25T20:23:31-04:00" />
-<meta itemprop="wordCount" content="308">
+<meta itemprop="wordCount" content="1094">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
   :root {
     --width: 720px;
-    --font-main: Verdana, sans-serif;
-    --font-secondary: Verdana, sans-serif;
-    --font-scale: 1em;
+    --font-main: 'Merriweather', 'serif';
+    --font-secondary: 'Merriweather', 'serif';
+    --font-scale: 1.1em;
     --background-color: #fff;
     --heading-color: #222;
     --text-color: #444;
@@ -196,21 +196,23 @@
   }
 
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
 <script>
-  
-  window.myDelimiters = [
-  {left: "$$", right: "$$", display: true},
-  {left: "$", right: "$", display: false},
-  {left: "\\(", right: "\\)", display: false},
-  {left: "\\[", right: "\\]", display: true}
-];
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
-    onload="renderMathInElement(document.body, {delimiters: window.myDelimiters});"></script></head>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script></head>
 
 <body>
   <header><a href="/" class="title">
@@ -225,7 +227,7 @@
 </header>
   <main>
 
-<h1>Parikhs Theorem</h1>
+<h1>Parikh&#39;s Theorem</h1>
 <p>
   <i>
     <time datetime='2025-05-25'>
@@ -235,18 +237,45 @@
 </p>
 
 <content>
-  <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, two (!) proofs, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
+  <p>Don&rsquo;t let the lobbyists at big PDA have you thinking there&rsquo;s only one way to prove a language is context free. Parikh&rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&rsquo;ll go over Parikh&rsquo;s Theorem, its proof, and how to use it. Strap in because it&rsquo;s gonna be a wild ride.</p>
 <h3 id="background">Background</h3>
 <p>Like any good TCS concept, Parikh&rsquo;s Theorem starts with a slightly intimidating amount of definitions. They are as follows:</p>
-<p>Let $ \Sigma = \lbrace a_1, a_2, \dots, a_k\rbrace$  be a language. Then the <em>parikh vector</em> of a word $w \in\Sigma^* $ is the function $p: \Sigma^* \rightarrow \mathbb{N}^k $ where $p(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
+<p>Let $ \Sigma = \lbrace a_1, a_2, \dots, a_k\rbrace$  be a language. Then the <em>parikh vector</em> of a word $w \in\Sigma^* $ is the function $\psi: \Sigma^* \rightarrow \mathbb{N}^k $ where $\Psi(w) = (|w_{a_1}|,\dots, |w_{a_k}|) $</p>
 <p>Seems a bit messy but all we&rsquo;re really saying is that, given some valid word, we can count the occurences of every symbol in that word.</p>
 <p>Now a subset of $\mathbb{N}^k$ is <em>linear</em> if you can represent it as</p>
-<p>$$ \lbrace \mu_0 + t_1\mu_1 + \dots + t_m\mu_m : | :t_1 \dots t_m \in \mathbb{N} \rbrace $$</p>
+<p>$$ \lbrace \mu_0 + t_1\mu_1 + \dots + t_m\mu_m \: | \: t_1 \dots t_m \in \mathbb{N} \rbrace $$</p>
 <p>where $\mu_1 &hellip; \mu_m $ are vectors. And a set is called <em>semi linear</em> if it is made up of finitely many linear subsets.</p>
 <p>The phrasing semi linear initially threw me off. A semi linear set is not somehow &ldquo;partially linear&rdquo;, it is just a collection of linear subsets. In fact, just one linear subset is considered to be semi linear. Just another victim of the horrid naming choices made by computer scientists.</p>
 <h3 id="the-theorem">The Theorem</h3>
-<p>Parikh&rsquo;s Theorem states that for any context free language $L$, let $P(L)$ be the set of it&rsquo;s Parikh vectors. Then $P(L)$ is semi linear. Also, if $S$ is a semi linear set, then there is a regular lanuage that has Parikh vectors $S$.</p>
-<p>To prove it, we&rsquo;ll first need to strengthen the <a href="https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages">pumping lemma for CFLs</a>, similar to <a href="/ogdens-theorem-and-inherent-ambiguity">Ogden&rsquo;s Theorem</a>.</p>
+<p>Parikh&rsquo;s Theorem states that for any context free language $L$, then $\Psi(L)$ is semi-linear. Also, if $S$ is a semi-linear set, then there is a regular lanuage that has Parikh vectors $S$.</p>
+<p>More intuitively, the theorem claims that, if you ignore the ordering, a regular language is equivalent to a context free language.</p>
+<p>First we&rsquo;ll prove that any semi-linear set $S$ is equal to the Parikh vectors of a regular set $R$. Since $S$ is the union of a finite number of linear sets and the union of regular sets is also a regular set, we only have to prove that a single linear set corresponds to the parikh vectors of a regular set. Let $S&rsquo;$ be the linear set $\lbrace u_0 + t_1u_1 + \dots + t_mu_m | t_i \in \mathbb{N} \rbrace$. Then it corresponds to the regular set $R = \lbrace z_{0} \circ (\bigcup_{i = 1}^m z_i) \rbrace$ where each $z_i$ has Parikh vector $u_i$.</p>
+<p>Next we&rsquo;ll show that any CFL has Parikh vectors that are a semi-linear set.</p>
+<p>To do so, we&rsquo;ll first need to strengthen the <a href="https://en.wikipedia.org/wiki/Pumping_lemma_for_context-free_languages">pumping lemma for CFLs</a>.</p>
+<p>For every context free grammar $G = (N, \Sigma, T, S)$, there is an integer $p$ such that, for every $k \geq 1$, if $w \in L(G)$ and $|w| \geq p^k$, then any derivation $S \Rightarrow ^ * w$ is equivalent to (uses the same derivation tree) as a derivation</p>
+<p>$S \Rightarrow ^* uAv \Rightarrow ^* ux_1Ay_1v \Rightarrow ^* \dots \Rightarrow ^* ux_1 \dots x_k A y_k \dots y_1v \Rightarrow ^* ux_1 \dots x_k z y_k \dots y_1v = w$</p>
+<p>for some nonterminal $A \in N$ and each $v_ix_i \neq \epsilon$ and $|v_1 \dots v_kwx_k&hellip;x_1| \leq p^k$</p>
+<p>The proof of this is incredibly similar to the proof of the original pumping lemma. At a large enough $p$, a variable will always show up at least twice and if a word has length $\geq p^k$, a variable will show up at least $k$ times. For a better explanation on strengthening the pumping lemma, see my earlier post on <a href="/ogdens-theorem-and-inherent-ambiguity">Ogden&rsquo;s Theorem</a>.</p>
+<p>To prove the theorem, we&rsquo;ll construct a regular language, prove that it&rsquo;s Parikh vectors are equivalent to an arbitrary context free language, then close with proving its semi-linearity.</p>
+<p>Consider a CFG $G = (N, \Sigma, T, S)$ and let $L = L(G)$ be its associating CFL. Let it have pumping length $p$. Let $U \subseteq N$ and $S \in U$ Let $L_U \subseteq L$ be the words in $L$ that use only the nonterminals belonging to $U$. We&rsquo;ll prove that $\Psi(L_U)$ is semilinear, proving $\Psi(L)$ is as well because context free languages are closed under union.</p>
+<p>First let $k = |U|$ and define</p>
+<p>$ F = \lbrace w \in L_U : |w| &lt; p^k \rbrace $</p>
+<p>$ G = \lbrace xy : 1 \leq |xy| \leq p^k$ and $ A \Rightarrow ^* xAy$ for some $A \in U \rbrace$</p>
+<p>Note that both of these are finite, making $FG^*$ regular.</p>
+<p>We will prove $\Psi (L_U) = \Psi (FG^*)$.</p>
+<p>To prove that \( \Psi (L_U) \subseteq \Psi (FG^*)$ let $w \in L_U \).</p>
+<p>If $|w| \lt p^k, w \in F \subseteq FG^* $. If $|w| \geq p^k$, we&rsquo;ll have to use our strengthened pumping lemma. Because $w \in L_U$, by definition there is a derivation $S \Rightarrow^* w$ that uses all the non-terminals in $L_U and by our strengthened pumping lemma is equivalent to a derivation</p>
+<p>$S \Rightarrow ^* uAv \Rightarrow ^* ux_1Ay_1v \Rightarrow ^* \dots \Rightarrow ^* ux_1 \dots x_k A y_k \dots y_1v \Rightarrow ^* ux_1 \dots x_k z y_k \dots y_1v = w$</p>
+<p>where $A \in U$, and each $x_iy_i \in G$. By a pigeonhole argument (think about how many derivations we need to do to get from $uAv$ to $ux_1 \dots x_k z y_k \dots y_1v$), we can remove a derivation $A \Rightarrow^* x_iAy_i$ and still ensure that the new string $w&rsquo;$ has a derivation tree that includes all non-terminals and so $w&rsquo; \in L_U$. Because $|w&rsquo;| \lt |w|$, we can inductively assume that $|w&rsquo;| \lt p^k$ and so $\Psi (w&rsquo;) \in \Psi (FG^*)$.</p>
+<p>Thus, $\Psi(w) = \Psi(w&rsquo;x_iy_i) \in \Psi (FG^*)$.</p>
+<p>Next, we&rsquo;ll prove\(\Psi (FG^*) \subseteq \Psi(L_U) \).</p>
+<p>Let $w \in FG^\ast$. If $w \in F$, then $w \in L_U$ If $w \notin F$ then think of $w$ as a string $w_0s$ where $w_0 \in F$ and $s \in G$. Then $s = xy$ where there is some transition $A \Rightarrow^\ast xAy$ for some $A \in U$. Since $|w_0| \lt w$ (else $w \in F$), then we can assume inductively that $\Psi (w_o) = \Psi(w&rsquo;), w&rsquo; \in F$. By our strengthened pumping lemma, there is a derivation</p>
+<p>$S \Rightarrow^* uAv \Rightarrow^* uzv = w'$</p>
+<p>This is pumpable, so there is a derivation</p>
+<p>$S \Rightarrow^* uAv \Rightarrow^* uxAyv \Rightarrow^* uxzyv = w&rsquo;'$</p>
+<p>Thus, $\Psi(w&rsquo;&rsquo;) = \Psi(w&rsquo;xy) = \Psi(w_0s) = \Psi(w)$ and $w&rsquo;&rsquo; \in L_U$, so $\Psi (w) = \Psi(w&rsquo;&rsquo;) \in \Psi(L_U)$.</p>
+<p>Thus, $\Psi (FG^*) \subseteq \Psi(L_U)$.</p>
+<p>All that&rsquo;s left is to prove that $\Psi(FG^*)$ is semi-linear. This is left as an exercise, to start, note that both $F$ and $G$ are finite.</p>
 
 </content>
 <p>
