@@ -46,3 +46,10 @@ ignoreErrors = ["error-disable-taxonomy"]
     lineNos = true
     lineNumbersInTable = false
     codeFences = true
+    
+  # make sure hugo doesn't mangle latex  
+  [goldmark.extensions.passthrough]
+    enable = true
+  [goldmark.extensions.passthrough.delimiters]
+    inline = [['$', '$'], ['\(', '\)']]
+    block = [['$$', '$$'], ['\[', '\]']]
