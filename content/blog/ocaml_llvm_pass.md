@@ -1,7 +1,8 @@
 +++
-title = 'Hacking a Pass Together in LLVM`s OCaml Bindings'
+title = "Hacking a Pass Together in LLVM's OCaml Bindings"
 date = 2025-08-03T09:47:53-04:00
 draft = false
+slug = 'ocaml-llvm-pass'
 +++
 
 If you're writing a production quality compiler, it's no longer good enough to just have correct code, you need speed. Compiler optimizations have become an incredibly important aspect of modern compiler design and will only grow in importance as languages are developed for increasingly specialized, computation heavy domains.

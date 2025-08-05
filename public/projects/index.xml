@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Some Interesting Things</title>
-    <link>https://johnbntn.github.io/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Some Interesting Things</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Apr 2025 12:52:32 -0400</lastBuildDate>
-    <atom:link href="https://johnbntn.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nittany Motorsports</title>
-      <link>https://johnbntn.github.io/projects/fsae/</link>
+      <link>http://localhost:1313/projects/fsae/</link>
       <pubDate>Sat, 05 Apr 2025 12:52:32 -0400</pubDate>
-      <guid>https://johnbntn.github.io/projects/fsae/</guid>
+      <guid>http://localhost:1313/projects/fsae/</guid>
       <description>Nittany Motorsports Here are some projects I did for Nittany Motorsports, Penn State&amp;rsquo;s FSAE Team:&#xA;LV BMS Wrote firmware for a low voltage (20V) passive BMS system for a FSAE vehicle. This was done using an STM32L432KC and a BQ76905 BMS chip. The system communicates over I2C and also sends CAN to the vehicle&amp;rsquo;s bus. There is support for a multitude of protections including over/under voltage, over/under temperature, short circuit in charge/discharge, and more.</description>
     </item>
     <item>
       <title>Datalog Program Analysis</title>
-      <link>https://johnbntn.github.io/projects/datalog_program_analysis/</link>
+      <link>http://localhost:1313/projects/datalog_program_analysis/</link>
       <pubDate>Fri, 03 Jan 2025 14:18:11 -0400</pubDate>
-      <guid>https://johnbntn.github.io/projects/datalog_program_analysis/</guid>
+      <guid>http://localhost:1313/projects/datalog_program_analysis/</guid>
       <description>Datalog Program Analysis Datalog is a logical programming language that is closely related to Prolog. You can think of it as Prolog that always terminates. Recently, there has been some research regarding Datalog&amp;rsquo;s use in program analysis [1, 2, 3]&#xA;I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. Here is the repository.</description>
     </item>
   </channel>

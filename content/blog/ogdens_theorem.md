@@ -2,6 +2,7 @@
 title = "Ogden's Theorem and Inherent Ambiguity"
 date = 2025-04-25T20:23:22-04:00
 draft = false
+slug = "ogdens-theorem"
 +++
 
 The pumping lemma for context free languages is a useful tool to prove a language to be non context free. But sometimes proofs about CFLs require more powerful tools. William Ogden, during his PhD at Stanford, published a paper that describes a way to generalize a the pumping lemma, allowing you to, in a sense, "choose where to pump".
