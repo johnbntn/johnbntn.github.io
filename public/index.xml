@@ -16,20 +16,6 @@
       <description>If you&amp;rsquo;re writing a production quality compiler, it&amp;rsquo;s no longer good enough to just have correct code, you need speed. Compiler optimizations have become an incredibly important aspect of modern compiler design and will only grow in importance as languages are developed for increasingly specialized, computation heavy domains.&#xA;What is LLVM? LLVM (which doesn&amp;rsquo;t stand for anything) is a codegen and optimization engine. It stands out for being architecture independent, so you can write optimizations in LLVM&amp;rsquo;s IR and let LLVM handle generating code for specific architectures.</description>
     </item>
     <item>
-      <title>Baladys_anomaly</title>
-      <link>http://localhost:1313/baladys_anomaly/</link>
-      <pubDate>Sun, 25 May 2025 20:24:03 -0400</pubDate>
-      <guid>http://localhost:1313/baladys_anomaly/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Parikh&#39;s Theorem</title>
-      <link>http://localhost:1313/parikhs-theorem/</link>
-      <pubDate>Sun, 25 May 2025 20:23:31 -0400</pubDate>
-      <guid>http://localhost:1313/parikhs-theorem/</guid>
-      <description>Don&amp;rsquo;t let the lobbyists at big PDA have you thinking there&amp;rsquo;s only one way to prove a language is context free. Parikh&amp;rsquo;s theorem is a helpful alternative when a pda seems too complex to draw. In this post we&amp;rsquo;ll go over Parikh&amp;rsquo;s Theorem, its proof, and how to use it. Strap in because it&amp;rsquo;s gonna be a wild ride.&#xA;Background Like any good TCS concept, Parikh&amp;rsquo;s Theorem starts with a slightly intimidating amount of definitions.</description>
-    </item>
-    <item>
       <title>Ogden&#39;s Theorem and Inherent Ambiguity</title>
       <link>http://localhost:1313/ogdens-theorem/</link>
       <pubDate>Fri, 25 Apr 2025 20:23:22 -0400</pubDate>
@@ -44,18 +30,18 @@
       <description>Nittany Motorsports Here are some projects I did for Nittany Motorsports, Penn State&amp;rsquo;s FSAE Team:&#xA;LV BMS Wrote firmware for a low voltage (20V) passive BMS system for a FSAE vehicle. This was done using an STM32L432KC and a BQ76905 BMS chip. The system communicates over I2C and also sends CAN to the vehicle&amp;rsquo;s bus. There is support for a multitude of protections including over/under voltage, over/under temperature, short circuit in charge/discharge, and more.</description>
     </item>
     <item>
-      <title>A Beginners Guide to the Learning With Errors Problem</title>
-      <link>http://localhost:1313/a-beginners-guide-to-the-learning-with-errors-problem/</link>
-      <pubDate>Mon, 24 Mar 2025 16:36:09 -0400</pubDate>
-      <guid>http://localhost:1313/a-beginners-guide-to-the-learning-with-errors-problem/</guid>
-      <description>Learning Learning with Errors with Errors Why am I writing this&#xA;my experience learning was a hodgepodge of blog posts, lecture notes, and research papers, all of which assume varying degrees of previous knowledge. Create a central starting point for someone interested in LWE/crypto with the only assumption being a reasonable intuition about lattices Provide code as well as some short proof ideas Also more resources to go in depth about a topic Why LWE FHE Quantum Resistant Public key generation The Basics key, vector, packed message, noise Go over generation Modulus Switching Key Switching Security Guaranty Variants </description>
-    </item>
-    <item>
       <title>Datalog Program Analysis</title>
       <link>http://localhost:1313/projects/datalog_program_analysis/</link>
       <pubDate>Fri, 03 Jan 2025 14:18:11 -0400</pubDate>
       <guid>http://localhost:1313/projects/datalog_program_analysis/</guid>
       <description>Datalog Program Analysis Datalog is a logical programming language that is closely related to Prolog. You can think of it as Prolog that always terminates. Recently, there has been some research regarding Datalog&amp;rsquo;s use in program analysis [1, 2, 3]&#xA;I used BAP (Binary Analysis Program) to generate Datalog facts about a binary for easier analysis and replicated the BAP tutorial using Datalog in significantly less code. Here is the repository.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/all-posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/all-posts/</guid>
+      <description>All Posts Theory Ogdens&amp;rsquo; Theorem Programming Languages and Compilers Hacking a Pass Together in LLVM&amp;rsquo;s OCaml Bindings </description>
     </item>
   </channel>
 </rss>
