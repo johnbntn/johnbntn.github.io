@@ -42,10 +42,9 @@ ignoreErrors = ["error-disable-taxonomy"]
 # https://gohugo.io/configuration/markup/#highlight
 [markup]
   [markup.highlight]
-    style = 'friendly'
-    lineNos = true
-    lineNumbersInTable = false
-    codeFences = true
+    codeFences = false
+    guessSyntax = false
+    noClasses = false
     
   # make sure hugo doesn't mangle latex  
   [goldmark.extensions.passthrough]

@@ -99,11 +99,30 @@
   }
 
   code {
-    font-family: monospace;
-    padding: 2px;
-    background-color: var(--code-background-color);
-    color: var(--code-color);
-    border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  background-color: rgba(175, 184, 193, 0.2);
+  color: #24292f;
+  border-radius: 6px;
+  white-space: nowrap;
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    code {
+      background-color: rgba(110, 118, 129, 0.4);
+      color: #f0f6fc;
+    }
+  }
+
+  /* Ensure code blocks don't get the inline styling */
+  pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    white-space: pre;
+    border-radius: 0;
   }
 
   blockquote {
