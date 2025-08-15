@@ -10,6 +10,8 @@ I'm a fourth year computer science student at Penn State University. I like comp
 
 This blog is a collection of cool aspects of computer science that I don't think get talked about enough. Hopefully you find some of them interesting.
 
+If you see a mistake or have any other comments, feel free to leave a post on this blog's [discussions](https://github.com/johnbntn/johnbntn.github.io/discussions) page.
+
 ## Projects
 
 I've also done some projects that I don't feel like writing entire posts about, some of them are listed below.
@@ -21,4 +23,10 @@ I've also done some projects that I don't feel like writing entire posts about, 
 - [Heir](https://github.com/google/heir) Compiler Contributions
     - Added CT-PT Operations -- [PR](https://github.com/google/heir/pull/1776)
     - Layout Conversion Estimation -- [PR](https://github.com/google/heir/pull/1967)
+
+## Links
+
+- [Github](https://github.com/johnbntn)
+- [LinkedIn](https://www.linkedin.com/in/john-benton-012649215/)
+- [Email](mailto:jbenton4494@gmail.com)
     

@@ -16,6 +16,13 @@
       <description>If you&amp;rsquo;re writing a production quality compiler, it&amp;rsquo;s no longer good enough to just have correct code, you need speed. Compiler optimizations have become an incredibly important aspect of modern compiler design and will only grow in importance as languages are developed for increasingly specialized, computation heavy domains.&#xA;What is LLVM? LLVM (which doesn&amp;rsquo;t stand for anything) is a codegen and optimization engine. It stands out for being architecture independent, so you can write optimizations in LLVM&amp;rsquo;s IR and let LLVM handle generating code for specific architectures.</description>
     </item>
     <item>
+      <title>Proof by Diagonalization</title>
+      <link>http://localhost:1313/proof-by-diagonalization/</link>
+      <pubDate>Thu, 12 Jun 2025 18:46:36 -0400</pubDate>
+      <guid>http://localhost:1313/proof-by-diagonalization/</guid>
+      <description>If you&amp;rsquo;ve taken a discrete math class, you&amp;rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&amp;rsquo;s another, less intuitive way of proving something true: proof by diagonalization.&#xA;This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability.</description>
+    </item>
+    <item>
       <title>Ogden&#39;s Theorem and Inherent Ambiguity</title>
       <link>http://localhost:1313/ogdens-theorem/</link>
       <pubDate>Fri, 25 Apr 2025 20:23:22 -0400</pubDate>

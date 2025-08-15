@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon/favicon.png" />
+<title>Proof by Diagonalization | Some Interesting Things</title>
+<meta name="title" content="Proof by Diagonalization" />
+<meta name="description" content="If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.
+This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Proof by Diagonalization" />
+<meta property="og:description" content="If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.
+This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/proof-by-diagonalization/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-06-12T18:46:36-04:00" />
+<meta property="article:modified_time" content="2025-06-12T18:46:36-04:00" /><meta property="og:site_name" content="Some Interesting Things" />
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Proof by Diagonalization"/>
+<meta name="twitter:description" content="If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.
+This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability."/>
+
+
+
+<meta itemprop="name" content="Proof by Diagonalization">
+<meta itemprop="description" content="If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.
+This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability."><meta itemprop="datePublished" content="2025-06-12T18:46:36-04:00" />
+<meta itemprop="dateModified" content="2025-06-12T18:46:36-04:00" />
+<meta itemprop="wordCount" content="1167">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: 'Merriweather', 'serif';
+    --font-secondary: 'Merriweather', 'serif';
+    --font-scale: 1.1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --code-background-color: #000;
+      --code-color: #ddd;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  background-color: rgba(175, 184, 193, 0.2);
+  color: #24292f;
+  border-radius: 6px;
+  white-space: nowrap;
+  }
+
+   
+  @media (prefers-color-scheme: dark) {
+    code {
+      background-color: rgba(110, 118, 129, 0.4);
+      color: #f0f6fc;
+    }
+  }
+
+   
+  pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    white-space: pre;
+    border-radius: 0;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script></head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Some Interesting Things</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/all-posts/">All Posts</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Proof by Diagonalization</h1>
+<p>
+  <i>
+    <time datetime='2025-06-12'>
+      12 Jun, 2025
+    </time>
+  </i>
+</p>
+
+<p>
+  
+</p>
+<content>
+  <p>If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.</p>
+<p>This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability.</p>
+<p>A discrete math background is recommended for the majority of this post and some knowledge of <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing Machines</a> is required for the final proof on decidability.</p>
+<h2 id="background">Background</h2>
+<p>Before jumping into diagonalization, it&rsquo;s important we go over the concept of countability. Mathmatician Georg Cantor came up with the concept of countability in order to classify infinite sets. He claimed that a set was countable if it was either finite or had a bijection with the natural numbers.</p>
+<p>Remember that a bijection is a function $f: A \rightarrow B$ that is both one-to-one and onto. A function is 1-1 if every element in $A$ the domain maps to exactly <em>one</em> element in the $B$ ($f(a) \neq f(b) \text{ whenever } a \neq b$). A function is onto if every element in $B$ is mapped to by an element in $A$ ($\forall b \in B, \exists a \in A, f(a) = b$).</p>
+<p>In other words, a bijective function is one that has a unique mapping between all its elements.</p>
+<p>This allows countable sets to be infinite, which seems like a contradiction, but it&rsquo;s just how countable sets are defined. Play with it a bit and I think it will start to make sense. After all, I think it&rsquo;s reasonable to call the natural numbers countable, even though there are an infinite amount.</p>
+<p>Some examples of countable sets include:</p>
+<ol>
+<li>The set of even numbers: $f(x) = 2x ; \forall x \in \mathbb{N}$</li>
+<li>The set of all odd numbers: $f(x) = 2x + 1 ; \forall x \in \mathbb{N} $</li>
+<li>The set of all rational numbers: <em>left as an exercise</em>
+<ul>
+<li>Hint: You can&rsquo;t start with $p/q$ and increase $q$ because you&rsquo;ll never run out of natural numbers for $p$.</li>
+</ul>
+</li>
+</ol>
+<p>All this talk of countable sets raises an interesting question about whether there exists a set that isn&rsquo;t countable. Thankfully Cantor thought of this as well. What followed was a mathmatical concept so groundbreaking that it got him in trouble with the Catholic Church.</p>
+<h2 id="diagonalization">Diagonalization</h2>
+<p>In essence, diagonalization proofs are just fancy contradictions, the difficult lies in finding that contradiction. We&rsquo;ll start with an example: proving the real numbers are uncountable<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p><strong>Proof:</strong></p>
+<p>Assume the real numbers $\mathbb{R}$ are countable. By definition, there is a function $f$ that maps every $x \in \mathbb{R}$ with every $y \in \mathbb{N}$. We will use diagonalization to prove that the set $S$ of all infinite binary sequences ($\lbrace x | x \in \lbrace 0, 1 \rbrace ^* \rbrace$) is uncountable, then form a bijection between $S$ and \mathbb{R}. This demonstrates $R$ is as big as an uncountable set, proving it uncountable as well.</p>
+<p>First, assume that the set $S$ is countable. Consider an enumeration of all infinite binary strings:</p>
+<p>$s_1 = 000 \dots$</p>
+<p>$s_2 = 111 \dots$</p>
+<p>$s_3 = 010 \dots$</p>
+<p>$\dots$</p>
+<p>We&rsquo;ll construct an element $x \in S$ that <em>cannot</em> be in the enumeration. The construction is as follows:</p>
+<p>First imagine the enumeration as a matrix of infinite binary strings. String one on the first row, string two on the second, and so on. Our new infinite binary string is constructed by tracking through the <em>diagonal</em> of our matrix and picking the opposite number every time. So if there&rsquo;s a $1$ in [0, 0], our new string will have a $0$ at position 0.</p>
+<p>Thus, we have constructed a string that differs from every single string in our enumeration by at least 1 index, because that&rsquo;s how it was constructed.</p>
+<p>If we look at the beginning of the enumeration above, the first three elements of our new string would be $101$.</p>
+<p>To form a bijection bijection between $S \text{ and } \mathbb{R}$, we&rsquo;ll first form one between $S$ and $A = \rbrace x | x \in [0, 1) \lbrace $.</p>
+<p>Intuitively, for every number right of the decimal, you can create a binary string that represents it. The standard encoding $0_{10} = 0_2, 1{10} = 1_{2}, 2{10} = 10_2, \dots$ works.</p>
+<p>Next, you need to prove that $|A| = |\mathbb{R}|$. This is out of the scope of this post, for some info on how to do this, see <a href="https://math.stackexchange.com/questions/1896320/cardinality-of-0-1-and-mathbbr">this</a> post on Math Overflow.</p>
+<p>I hope this served as a useful introduction to the diagonalization method. Don&rsquo;t worry if you found it confusing, I did as well (along with everyone in my Theory of Computation class). Now, we&rsquo;ll move into another application of the method: proving a langugae is undecidable.</p>
+<h2 id="undecidability">Undecidability</h2>
+<p>For those unititiated, an undeciable language $L$ is one that, given any turing machine $M$:</p>
+<ul>
+<li>if $x \in L, M \text{ accepts } x$</li>
+<li>if $x \not \in L, M \text{ rejects } x$</li>
+</ul>
+<p>In other words, $M$ always terminates correctly. Contrast this with <em>recognizable</em> languages which may not terminate, but will always be correct if they do.</p>
+<p>Proving undecibility is difficult because you can&rsquo;t just try really hard and fail to find a correct machine $M$, you need to prove that an arbitrary machine $M$ will fail. Thankfully (or maybe not, if you don&rsquo;t like it) diagonalization provides one way to do this. We&rsquo;ll start with the langauge $A_{TM}$:</p>
+<p>$A_{TM} = \lbrace \langle M, x \rangle | M \text{ is a turing machine and accepts } x \rbrace $</p>
+<p><strong>Proof:</strong></p>
+<p>We&rsquo;ll again start by assuming that $A_{TM}$ is decidable, say by $TM$ $D$. We&rsquo;ll use $D$ to create another $TM$ $A$ that creates a contradiction.</p>
+<p>$A =$ On input $M$ where $M$ is a $TM$.</p>
+<ol>
+<li>Run $D$ on $\langle M, M \rangle $</li>
+<li>If $D$ accepts, reject</li>
+<li>Otherwise, accept</li>
+</ol>
+<p>In other words, see if $M$ accepts itself and return the opposite. It&rsquo;s easy to forget that Turing Machines can be encoded as strings and can thus be used as input to another $TM$ (including itself).</p>
+<p>The contradiction arises when you try to run $A$ on itself. Remember that $A$ always does the opposite of $D$ so if $M$ accepts $\langle M \rangle $, $A$ rejects $M$.</p>
+<p>However, if $A$ accepts $\langle A \rangle $ then $A$ must have rejected $\langle A \rangle $ (and vice versa), which is a contradiction.</p>
+<p>But where is the diagonalization?</p>
+<p>Imagine a matrix of all Turing Machines. Position $[i, j]$ represents running the $TM$ at row $i$ with input $TM$ column $j$. Normally, the result would be either acceptance, rejection, or a loop but a contradiction must occur at some point along the diagonal, when we run $A$ on $\langle A \rangle$.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>And that&rsquo;s it! Hopefully you now feel a little more comfortable with diagonalization.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>If you&rsquo;re interested, Cantor&rsquo;s idea that there were sets larger than infinity is what got him in hot water with some priests.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</content>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+  
+</body>
+
+</html>

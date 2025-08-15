@@ -226,7 +226,8 @@ What is LLVM? LLVM (which doesn&rsquo;t stand for anything) is a codegen and opt
 <script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
   },
   svg: {
     fontCache: 'global'
@@ -265,6 +266,9 @@ MathJax = {
   </i>
 </p>
 
+<p>
+  
+</p>
 <content>
   <p>If you&rsquo;re writing a production quality compiler, it&rsquo;s no longer good enough to just have correct code, you need speed. Compiler optimizations have become an incredibly important aspect of modern compiler design and will only grow in importance as languages are developed for increasingly specialized, computation heavy domains.</p>
 <h2 id="what-is-llvm">What is LLVM?</h2>
@@ -396,9 +400,6 @@ let _ = Llvm.build_unreachable builder in
 <p>And that&rsquo;s it! Hopefully you learned a bit about LLVM and OCaml. Happy Optimizing!</p>
 
 </content>
-<p>
-  
-</p>
 
   </main>
   <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
