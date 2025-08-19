@@ -34,7 +34,7 @@ This post will start with some background, briefly go over the intuition of the 
 <meta itemprop="description" content="If you&rsquo;ve taken a discrete math class, you&rsquo;ve likely covered the common methods of proof: direct, contrapositive, contradiction, and induction. What you may not know is that there&rsquo;s another, less intuitive way of proving something true: proof by diagonalization.
 This post will start with some background, briefly go over the intuition of the diagonalization method, use it prove there is more than one kind of infinity, before concluding with a proof of undecidability."><meta itemprop="datePublished" content="2025-06-12T18:46:36-04:00" />
 <meta itemprop="dateModified" content="2025-06-12T18:46:36-04:00" />
-<meta itemprop="wordCount" content="1167">
+<meta itemprop="wordCount" content="1216">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -292,7 +292,7 @@ MathJax = {
 <h2 id="diagonalization">Diagonalization</h2>
 <p>In essence, diagonalization proofs are just fancy contradictions, the difficult lies in finding that contradiction. We&rsquo;ll start with an example: proving the real numbers are uncountable<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p><strong>Proof:</strong></p>
-<p>Assume the real numbers $\mathbb{R}$ are countable. By definition, there is a function $f$ that maps every $x \in \mathbb{R}$ with every $y \in \mathbb{N}$. We will use diagonalization to prove that the set $S$ of all infinite binary sequences ($\lbrace x | x \in \lbrace 0, 1 \rbrace ^* \rbrace$) is uncountable, then form a bijection between $S$ and \mathbb{R}. This demonstrates $R$ is as big as an uncountable set, proving it uncountable as well.</p>
+<p>Assume the real numbers $\mathbb{R}$ are countable. By definition, there is a function $f$ that maps every $x \in \mathbb{R}$ with every $y \in \mathbb{N}$. We will use diagonalization to prove that the set $S$ of all infinite binary sequences ($\lbrace x | x \in \lbrace 0, 1 \rbrace ^* \rbrace$) is uncountable, then form a bijection between $S$ and $\mathbb{R}$. This demonstrates $\mathbb{R}$ is as big as an uncountable set, proving it uncountable as well.</p>
 <p>First, assume that the set $S$ is countable. Consider an enumeration of all infinite binary strings:</p>
 <p>$s_1 = 000 \dots$</p>
 <p>$s_2 = 111 \dots$</p>
@@ -302,9 +302,9 @@ MathJax = {
 <p>First imagine the enumeration as a matrix of infinite binary strings. String one on the first row, string two on the second, and so on. Our new infinite binary string is constructed by tracking through the <em>diagonal</em> of our matrix and picking the opposite number every time. So if there&rsquo;s a $1$ in [0, 0], our new string will have a $0$ at position 0.</p>
 <p>Thus, we have constructed a string that differs from every single string in our enumeration by at least 1 index, because that&rsquo;s how it was constructed.</p>
 <p>If we look at the beginning of the enumeration above, the first three elements of our new string would be $101$.</p>
-<p>To form a bijection bijection between $S \text{ and } \mathbb{R}$, we&rsquo;ll first form one between $S$ and $A = \rbrace x | x \in [0, 1) \lbrace $.</p>
-<p>Intuitively, for every number right of the decimal, you can create a binary string that represents it. The standard encoding $0_{10} = 0_2, 1{10} = 1_{2}, 2{10} = 10_2, \dots$ works.</p>
-<p>Next, you need to prove that $|A| = |\mathbb{R}|$. This is out of the scope of this post, for some info on how to do this, see <a href="https://math.stackexchange.com/questions/1896320/cardinality-of-0-1-and-mathbbr">this</a> post on Math Overflow.</p>
+<p>To form a bijection bijection between $S \text{ and } \mathbb{R}$, we&rsquo;ll first form one between $S$ and $A = \lbrace x | x \in [0, 1) \rbrace $.</p>
+<p>For every number right of the decimal, you can create an infinite binary string that represents it. To do this, simply use the standard encoding an then add an infinite number of 1s or 0s, depending on the last digit of the boolean value: $0_{10} = 0111 \dots_2, 1_{10} = 1000\dots_{2}, 2_{10} = 10111\dots_2,$ etc.</p>
+<p>Next, you need to prove that $|A| = |\mathbb{R}|$. This is out of the scope of this post, for some info on how to do this, see <a href="https://math.stackexchange.com/questions/1896320/cardinality-of-0-1-and-mathbbr">this</a> post on Math Overflow. However, informally, the set of all the real numbers contains $[0, 1)$, which we&rsquo;ve just shown to be uncountable. Thus, $\mathbb{R}$ is uncountable as well.</p>
 <p>I hope this served as a useful introduction to the diagonalization method. Don&rsquo;t worry if you found it confusing, I did as well (along with everyone in my Theory of Computation class). Now, we&rsquo;ll move into another application of the method: proving a langugae is undecidable.</p>
 <h2 id="undecidability">Undecidability</h2>
 <p>For those unititiated, an undeciable language $L$ is one that, given any turing machine $M$:</p>
