@@ -8,33 +8,33 @@
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon/favicon.png" />
 <title>Rice&#39;s Theorem | Some Interesting Things</title>
 <meta name="title" content="Rice&#39;s Theorem" />
-<meta name="description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
+<meta name="description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
 In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable." />
 <meta name="keywords" content="" />
 
 
 <meta property="og:title" content="Rice&#39;s Theorem" />
-<meta property="og:description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
+<meta property="og:description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
 In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/rices-theorem/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2025-08-10T00:00:00+00:00" />
-<meta property="article:modified_time" content="2025-08-10T00:00:00+00:00" /><meta property="og:site_name" content="Some Interesting Things" />
+<meta property="article:published_time" content="2025-07-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-07-17T00:00:00+00:00" /><meta property="og:site_name" content="Some Interesting Things" />
 
 
 
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Rice&#39;s Theorem"/>
-<meta name="twitter:description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
+<meta name="twitter:description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
 In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable."/>
 
 
 
 <meta itemprop="name" content="Rice&#39;s Theorem">
-<meta itemprop="description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
-In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable."><meta itemprop="datePublished" content="2025-08-10T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2025-08-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="321">
+<meta itemprop="description" content="In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.
+In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable."><meta itemprop="datePublished" content="2025-07-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-07-17T00:00:00+00:00" />
+<meta itemprop="wordCount" content="834">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -260,8 +260,8 @@ MathJax = {
 <h1>Rice&#39;s Theorem</h1>
 <p>
   <i>
-    <time datetime='2025-08-10'>
-      10 Aug, 2025
+    <time datetime='2025-07-17'>
+      17 Jul, 2025
     </time>
   </i>
 </p>
@@ -270,20 +270,45 @@ MathJax = {
   
 </p>
 <content>
-  <p>In my post about <a href="/blog/proof-by-diagonalization">diagonalization</a> we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.</p>
+  <p>In my post about <a href="/blog/proof-by-diagonalization">diagonalization</a> we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.</p>
 <p>In this post, we&rsquo;ll take a look at a really interesting concept in computer science: Rice&rsquo;s Theorem, which says that any non-trivial property of a language is undecidable. Now, instead of diagonalization, we can simply appeal to Rice&rsquo;s Theorem and greatly shorten our proofs.</p>
 <p>As always, we&rsquo;ll start with some background, then move into the proof of Rice&rsquo;s Theorem, before closing with some examples.</p>
 <h2 id="reduction">Reduction</h2>
 <p>Before jumping into Rice&rsquo;s Theorem, it&rsquo;s very important to understand the concept of <em>reduction</em>. I think it&rsquo;s best explained with an example: we&rsquo;ll prove the undecidability of <a href="https://en.wikipedia.org/wiki/Halting_problem">The Halting Problem</a> by <em>reducing</em> it to $A_{TM}$.</p>
-<p>To start, we&rsquo;ll define language $L_{HALT} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { halts on input } x \rbrace$ and assume it&rsquo;s decidable by $TM$ $D$. Next, we&rsquo;ll use $D$ to decide $A_{TM}$, thus reducing the Halting Problem into $A_{TM}$.</p>
+<p>To start, we&rsquo;ll define language $L_{HALT} := \lbrace \langle M, x \rangle | \text{ turing machine } M \text { halts on input } x \rbrace$ and assume it&rsquo;s decidable by $TM$ $D$. Next, we&rsquo;ll use $D$ to decide $A_{TM}$, thus reducing the Halting Problem into $A_{TM}$.</p>
 <p>Define $TM$ $A :=$ On input $\langle M, x \rangle$:</p>
-<ul>
+<ol>
 <li>Run $D$ on $\langle M, x \rangle$</li>
 <li>If $D$ accepts ($M$ halts on $x$), run $M$ on $x$ and respond as $A$.</li>
 <li>If $D$ rejects, reject</li>
-</ul>
+</ol>
 <p>We know that this machine $A$ decides $A_{TM}$ because if $M$ halts on $x$, $M$ will either accept or reject and if $M$ doesn&rsquo;t halt on $x$, we know that it would not accept.</p>
 <p>Hopefully this demonstrates the concept of reduction. We want to prove that one problem is undecidable by proving that it can be used to solve another undecidable problem. Note that now you can also reduce to the halting problem as well to prove undecidability.</p>
+<h2 id="rices-theorem">Rice&rsquo;s Theorem</h2>
+<p>Informally, Rice&rsquo;s Theorem states that all non-trivial properties of a program are undecidable. This means that, given some langugage $L_p := \lbrace \langle M \rangle \in L | M \text{ is a turing machine that only accepts inputs that have non-trivial property } p \rbrace $, $L$ will always be undecidable. We say that a property is non-trivial if it is not true/false for every program. In other words, a trivial property is one that is either true or false for every program while a non-trivial property classifies Turing Machines into ones that satisfy or don&rsquo;t satisfy.</p>
+<p>One way to prove this is by reduction to $A_{TM}$.</p>
+<p><strong>Proof:</strong></p>
+<p>First, for every non-trivial property $P$, we&rsquo;ll define $P_{TM} := \lbrace \langle M \rangle \in P_{TM} | L(M) \text{ has property } P \rbrace$.</p>
+<p>For contradiction, we&rsquo;ll asssume it&rsquo;s decided by $TM$ $D$. Because $P$ is non-trivial, we can define the language $L$ such that if $\emptyset \in P$, then $L \not\in P$. And if $\emptyset \not\in P$, then $L \in P$. Let $R$ be the recognizer for $L$. We&rsquo;ll assume that $\emptyset \in P$ but you can adapt the proof to work the other way as well.</p>
+<p>Now, we&rsquo;ll use $R$ and $D$ to create some $TM$ $B$ that decides $A_{TM}$:</p>
+<p>$B :=$ On input $\langle M, x \rangle$:</p>
+<ol>
+<li>Define the $TM$ $M&rsquo; :=$ On input $y$:
+<ol>
+<li>Run $M$ on $x$</li>
+<li>If $M$ rejects, reject. Else run $R$ on y.</li>
+</ol>
+</li>
+<li>Run $D$ on $M'$</li>
+<li>If $D$ accepts, reject, else accept.</li>
+</ol>
+<p>First, don&rsquo;t be alarmed by the creation of another turing machine within a turing machine. Next, pay attention to what $M&rsquo;$ is actually doing. The only way it can run $R$ on $y$ is if $M$ halts on $x$. If $M$ doesn&rsquo;t halt, then $M&rsquo;$ accepts nothing ($\emptyset$). Remember that $\emptyset \in P$, so if $D$ accepts $M&rsquo;$, it must be the case that $M$ doesn&rsquo;t halt on $x$, and we reject.</p>
+<p>The other case, where $M$ halts on $x$, is handled as well. If $M$ rejects, we reject as well. Thus, $M&rsquo;$ will only generate $\emptyset$, causing $D$ to accept and $B$ to reject.</p>
+<p>If $M$ accepts, we start to simulate $R$ on $y$. Reminder that $y$ is the input to $M&rsquo;$. This means that $M&rsquo;$ will generate $L \not\in P$ and $D$ will reject, causing $B$ to accept.</p>
+<p>These kind of arguments can be really tricky at first. The important thing to remember is that we never actually run $M&rsquo;$, it&rsquo;s only used as input to $D$. As a result, we don&rsquo;t need to care about it&rsquo;s running time.</p>
+<h2 id="a-small-example">A Small Example</h2>
+<p>Consider a language $EMPTY_{TM} := \lbrace \langle M \rangle | L(M) = \emptyset$. It&rsquo;s clear that this is a non-trivial property because we can have a language only containing $\emptyset$ and a language that contains strings of $0$s of length $5$. By Rice&rsquo;s Theorem, this language is undecidable.</p>
+<p>See how much shorter that is than using diagonalization! I hope this post provided a good explanation of Rice&rsquo;s Theorem as well as why it might be useful. Until next time!</p>
 
 </content>
 

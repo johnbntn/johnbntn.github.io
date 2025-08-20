@@ -6,21 +6,21 @@
     <description>Recent content in Blog on Some Interesting Things</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Aug 2025 09:47:53 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Rice&#39;s Theorem</title>
-      <link>http://localhost:1313/rices-theorem/</link>
-      <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/rices-theorem/</guid>
-      <description>In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what is is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.&#xA;In this post, we&amp;rsquo;ll take a look at a really interesting concept in computer science: Rice&amp;rsquo;s Theorem, which says that any non-trivial property of a language is undecidable.</description>
-    </item>
     <item>
       <title>Hacking a Pass Together in LLVM&#39;s OCaml Bindings</title>
       <link>http://localhost:1313/ocaml-llvm-pass/</link>
       <pubDate>Sun, 03 Aug 2025 09:47:53 -0400</pubDate>
       <guid>http://localhost:1313/ocaml-llvm-pass/</guid>
       <description>If you&amp;rsquo;re writing a production quality compiler, it&amp;rsquo;s no longer good enough to just have correct code, you need speed. Compiler optimizations have become an incredibly important aspect of modern compiler design and will only grow in importance as languages are developed for increasingly specialized, computation heavy domains.&#xA;What is LLVM? LLVM (which doesn&amp;rsquo;t stand for anything) is a codegen and optimization engine. It stands out for being architecture independent, so you can write optimizations in LLVM&amp;rsquo;s IR and let LLVM handle generating code for specific architectures.</description>
+    </item>
+    <item>
+      <title>Rice&#39;s Theorem</title>
+      <link>http://localhost:1313/rices-theorem/</link>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/rices-theorem/</guid>
+      <description>In my post about diagonalization we proved that the language $A_{TM} := \lbrace \langle M, x \rangle \in A_{TM} | \text{ turing machine } M \text { accepts string } x \rbrace $ is undecidable. But what what else is undecidable? And do we need to use diagonalization to prove it every time? The answers: a lot and no.&#xA;In this post, we&amp;rsquo;ll take a look at a really interesting concept in computer science: Rice&amp;rsquo;s Theorem, which says that any non-trivial property of a language is undecidable.</description>
     </item>
     <item>
       <title>Proof by Diagonalization</title>
